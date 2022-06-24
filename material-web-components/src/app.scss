@@ -1,0 +1,30 @@
+html {
+  --mdc-theme-primary: #ff8c45;
+}
+
+body {
+  font-family: 'Montserrat', serif;
+}
+
+.grid-container-navbar{
+  display: grid;
+  grid-template-columns: auto auto auto;
+}
+.grid-container-navbar > div {
+  padding: 20px 50px;
+}
+.home{
+  text-align: left;
+}
+.meineRezepte{
+  text-align: center;
+}
+.rezeptErstellen{
+  text-align: right;
+}
+
+.ueberschrift{
+  padding: 10px 0 20px 116px;
+}
+
+
