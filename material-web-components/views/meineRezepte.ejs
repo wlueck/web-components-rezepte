@@ -6,7 +6,7 @@
 
     <link rel="stylesheet" href="../dist/bundle.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
 
     <style>
         .accordion {
@@ -24,21 +24,21 @@
             display: none;
         }
 
-        .accordion_hover:hover{
+        .accordion_hover:hover {
             border-left: 4px solid #FFB338;
         }
 
-        #rezeptListe{
-            margin: 0px 116px 20px 116px;
+        #rezeptListe {
+            margin: 0 116px 20px 116px;
         }
 
-        #zubereitung{
+        #zubereitung {
             width: 530px;
             height: 260px;
             background-color: #F9F9F9;
             border: 1px solid #E6E6E6;
             border-radius: 5px;
-            padding:20px;
+            padding: 20px;
         }
 
     </style>
@@ -46,22 +46,23 @@
 </head>
 <body>
 
-    <div class="grid-container-navbar">
-        <div class="home">
-            <mwc-button onclick="window.location.href = '/';" label="HOME"></mwc-button>
-        </div>
-        <div class="meineRezepte">
-            <mwc-button onclick="window.location.href = 'meineRezepte';" label="Meine Rezepte"></mwc-button>
-        </div>
-        <div class="rezeptErstellen">
-            <mwc-button onclick="window.location.href = 'erstellen';" raised label="Rezept hinzufügen" icon="arrow_forward" trailingIcon></mwc-button>
-        </div>
+<div class="grid-container-navbar">
+    <div class="home">
+        <mwc-button onclick="window.location.href = '/';" label="HOME"></mwc-button>
     </div>
-    <h3 class="ueberschrift">MEINE REZEPTE</h3>
+    <div class="meineRezepte">
+        <mwc-button onclick="window.location.href = 'meineRezepte';" label="Meine Rezepte"></mwc-button>
+    </div>
+    <div class="rezeptErstellen">
+        <mwc-button onclick="window.location.href = 'erstellen';" raised label="Rezept hinzufügen" icon="arrow_forward"
+                    trailingIcon></mwc-button>
+    </div>
+</div>
+<h3 class="ueberschrift">MEINE REZEPTE</h3>
 
-    <div id="rezeptListe">
-        <% for(var i=0; i < rezepte.length; i++) { %>
-            <div class="accordion_hover">
+<div id="rezeptListe">
+    <% for(var i = 0; i < rezepte.length; i++) { %>
+        <div class="accordion_hover">
             <button class="accordion">
                 <h3>
                     <%= rezepte[i].titel %>
@@ -83,48 +84,49 @@
                     <tr>
                         <td style="width: 50%; vertical-align: top;">
                             <table style="width: 390px; border-collapse: collapse; border: 1px solid #EDEDED;">
-                                <% for(var j=0; j < rezepte[i].zutaten.length; j++) { %>
-                                <%if(j%2===0){%>
-                                    <tr style="background-color: #e8e8e8; border: 2px solid #EDEDED;">
-                                <%}else{%>
-                                    <tr style="border: 2px solid #EDEDED;">
-                                <% } %>
-                                        <td style="padding: 10px 20px; border: 2px solid #EDEDED; width: 70px;"><%= rezepte[i].zutaten[j].menge %> <%= rezepte[i].zutaten[j].einheit %></td>
-                                        <td style="padding: 10px 20px; border: 2px solid #EDEDED;"><%= rezepte[i].zutaten[j].zutat %></td>
-                                    </tr>
+                                <% for(var j = 0; j < rezepte[i].zutaten.length; j++) { %>
+                                <% if(j % 2 === 0){ %>
+                                <tr style="background-color: #e8e8e8; border: 2px solid #EDEDED;">
+                                    <% }else{ %>
+                                <tr style="border: 2px solid #EDEDED;">
+                                    <% } %>
+                                    <td style="padding: 10px 20px; border: 2px solid #EDEDED; width: 70px;"><%= rezepte[i].zutaten[j].menge %> <%= rezepte[i].zutaten[j].einheit %></td>
+                                    <td style="padding: 10px 20px; border: 2px solid #EDEDED;"><%= rezepte[i].zutaten[j].zutat %></td>
+                                </tr>
                                 <% } %>
                             </table>
                         </td>
                         <td style="width: 50%; vertical-align: top;">
-                            <mwc-textarea id ="zubereitung" placeholder="<%= rezepte[i].zubereitung %>" disabled></mwc-textarea>
+                            <mwc-textarea id="zubereitung" placeholder="<%= rezepte[i].zubereitung %>"
+                                          disabled></mwc-textarea>
                         </td>
                     </tr>
                 </table>
             </div>
-            </div>
-        <% } %>
+        </div>
+    <% } %>
 
-    </div>
+</div>
 
-    <script>
-        let acc = document.getElementsByClassName("accordion");
+<script>
+    let accordion = document.getElementsByClassName("accordion");
 
-        for (let i = 0; i < acc.length; i++) {
-            acc[i].addEventListener("click", function() {
-                this.classList.toggle("active");
-                let panel = this.nextElementSibling;
-                if (panel.style.display === "block") {
-                    panel.style.display = "none";
-                    acc[i].style.borderBottom = "2px solid #EDEDED";
-                } else {
-                    panel.style.display = "block";
-                    panel.style.borderTop = "none";
-                    acc[i].style.borderBottom = "none";
-                }
-            });
-        }
-    </script>
+    for (let i = 0; i < accordion.length; i++) {
+        accordion[i].addEventListener("click", function () {
+            this.classList.toggle("active");
+            let panel = this.nextElementSibling;
+            if (panel.style.display === "block") {
+                panel.style.display = "none";
+                accordion[i].style.borderBottom = "2px solid #EDEDED";
+            } else {
+                panel.style.display = "block";
+                panel.style.borderTop = "none";
+                accordion[i].style.borderBottom = "none";
+            }
+        });
+    }
+</script>
 
-    <script src="../dist/bundle.js" async></script>
+<script src="../dist/bundle.js" async></script>
 </body>
 </html>

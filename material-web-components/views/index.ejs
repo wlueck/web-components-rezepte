@@ -6,23 +6,24 @@
 
     <link rel="stylesheet" href="../dist/bundle.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
 </head>
 <body>
 
-    <div class="grid-container-navbar">
-        <div class="home">
-            <mwc-button onclick="window.location.href = '/';" label="HOME"></mwc-button>
-        </div>
-        <div class="meineRezepte">
-            <mwc-button onclick="window.location.href = 'meineRezepte';" label="Meine Rezepte"></mwc-button>
-        </div>
-        <div class="rezeptErstellen">
-            <mwc-button onclick="window.location.href = 'erstellen';" raised label="Rezept hinzufügen" icon="arrow_forward" trailingIcon></mwc-button>
-        </div>
+<div class="grid-container-navbar">
+    <div class="home">
+        <mwc-button onclick="window.location.href = '/';" label="HOME"></mwc-button>
     </div>
-    <h3 class="ueberschrift">WILLKOMMEN</h3>
+    <div class="meineRezepte">
+        <mwc-button onclick="window.location.href = 'meineRezepte';" label="Meine Rezepte"></mwc-button>
+    </div>
+    <div class="rezeptErstellen">
+        <mwc-button onclick="window.location.href = 'erstellen';" raised label="Rezept hinzufügen"
+                    icon="arrow_forward" trailingIcon></mwc-button>
+    </div>
+</div>
+<h3 class="ueberschrift">WILLKOMMEN</h3>
 
-    <script src="../dist/bundle.js" async></script>
+<script src="../dist/bundle.js" async></script>
 </body>
 </html>

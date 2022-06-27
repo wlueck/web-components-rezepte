@@ -6,108 +6,108 @@
 
     <link rel="stylesheet" href="../src/grid-style.css">
     <link rel="stylesheet" href="../dist/bundle.css">
-    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
 </head>
-<body >
+<body>
 
-    <div class="grid-container-navbar">
-        <div class="home">
-            <mwc-button onclick="window.location.href = '/';" label="HOME"></mwc-button>
+<div class="grid-container-navbar">
+    <div class="home">
+        <mwc-button onclick="window.location.href = '/';" label="HOME"></mwc-button>
+    </div>
+    <div class="meineRezepte">
+        <mwc-button onclick="window.location.href = 'meineRezepte';" label="Meine Rezepte"></mwc-button>
+    </div>
+    <div class="rezeptErstellen">
+        <mwc-button onclick="window.location.href = 'erstellen';" raised label="Rezept hinzufügen" icon="arrow_forward"
+                    trailingIcon></mwc-button>
+    </div>
+</div>
+<h3 class="ueberschrift">REZEPT ERSTELLEN</h3>
+
+<form method="POST" id="form">
+    <div class="grid-container-main">
+
+        <div class="titel">
+            <mwc-textfield label="Titel" name="titel" style="width: 500px"></mwc-textfield>
         </div>
-        <div class="meineRezepte">
-            <mwc-button onclick="window.location.href = 'meineRezepte';" label="Meine Rezepte"></mwc-button>
+
+        <div class="personenanzahl">
+            <mwc-textfield label="Personenanzahl" name="personenAnzahl" type="number" min="1" step="1"></mwc-textfield>
         </div>
-        <div class="rezeptErstellen">
-            <mwc-button onclick="window.location.href = 'erstellen';" raised label="Rezept hinzufügen" icon="arrow_forward" trailingIcon></mwc-button>
+
+        <div class="ernaehrungsform">
+            <label for="ernaehrungsform">Ernährungsform</label>
+            <mwc-formfield label="vegetarisch" style="display: block;">
+                <mwc-radio name="ernaehrungsform" value="vegetarisch"></mwc-radio>
+            </mwc-formfield>
+            <mwc-formfield label="nicht vegetarisch" style="display: block;">
+                <mwc-radio name="ernaehrungsform" value="nicht vegetarisch"></mwc-radio>
+            </mwc-formfield>
+        </div>
+
+        <div class="kategorie">
+            <label for="kategorie">Kategorie</label><br>
+            <mwc-formfield label="Frühstück">
+                <mwc-checkbox name="kategorie" value="Frühstück"></mwc-checkbox>
+            </mwc-formfield>
+            <mwc-formfield label="Mittagessen">
+                <mwc-checkbox name="kategorie" value="Mittagessen"></mwc-checkbox>
+            </mwc-formfield>
+            <mwc-formfield label="Abendessen">
+                <mwc-checkbox name="kategorie" value="Abendessen"></mwc-checkbox>
+            </mwc-formfield>
+        </div>
+
+        <div class="zutaten">
+            <label>Zutaten</label><br><br>
+            <mwc-textfield label="Menge" type="number" id="menge" min="1" style="width: 100px"></mwc-textfield>
+
+            <mwc-select label="Einheit" id="einheit" style="width: 130px">
+                <mwc-list-item value="mg">mg</mwc-list-item>
+                <mwc-list-item value="g">g</mwc-list-item>
+                <mwc-list-item value="kg">kg</mwc-list-item>
+                <mwc-list-item value="ml">ml</mwc-list-item>
+                <mwc-list-item value="l">l</mwc-list-item>
+                <mwc-list-item value="Stück">Stück</mwc-list-item>
+                <mwc-list-item value="Prise">Prise</mwc-list-item>
+                <mwc-list-item value="EL">EL</mwc-list-item>
+                <mwc-list-item value="TL">TL</mwc-list-item>
+                <mwc-list-item value="Dose(n)">Dose(n)</mwc-list-item>
+                <mwc-list-item value="Scheiben(n)">Scheiben(n)</mwc-list-item>
+            </mwc-select>
+
+            <mwc-textfield label="Zutat" id="zutat"></mwc-textfield>
+
+            <mwc-icon-button icon="add" id="hinzufuegen"></mwc-icon-button>
+
+            <br><br>
+            <div id="zutatenListe"></div>
+
+        </div>
+
+        <div class="zubereitung">
+            <mwc-textarea rows="5" cols="55" label="Zubereitung" name="zubereitung"></mwc-textarea>
+        </div>
+
+        <div class="foto">
+            Foto
+        </div>
+
+        <div class="zubereitungszeit">
+            <mwc-textfield label="Zubereitungszeit (min)" name="zubereitungszeit" type="number" min="1"
+                           style="width: 200px"></mwc-textfield>
+        </div>
+
+        <div class="speichern">
+            <button type="submit" style="all: unset;">
+                <mwc-button raised label="Speichern"></mwc-button>
+            </button>
         </div>
     </div>
-    <h3 class="ueberschrift">REZEPT ERSTELLEN</h3>
+</form>
 
-    <form method="POST" id="form">
-        <div class="grid-container-main">
-
-            <div class="titel">
-                <mwc-textfield required label="Titel" name="titel" id="titel" style="width: 500px"></mwc-textfield>
-            </div>
-
-            <div class="personenanzahl">
-                <mwc-textfield label="Personenanzahl" name="personenAnzahl" type="number" min="1" step="1" required></mwc-textfield>
-            </div>
-
-            <div class="ernaehrungsform">
-                <label for="ernaehrungsform">Ernährungsform</label>
-                <mwc-formfield label="vegetarisch" style="display: block;">
-                    <mwc-radio name="ernaehrungsform" value="vegetarisch"></mwc-radio>
-                </mwc-formfield>
-                <mwc-formfield label="nicht vegetarisch" style="display: block;">
-                    <mwc-radio name="ernaehrungsform" value="nicht vegetarisch"></mwc-radio>
-                </mwc-formfield>
-            </div>
-
-            <div class="kategorie">
-                <label for="kategorie">Kategorie</label><br>
-                <mwc-formfield label="Frühstück">
-                    <mwc-checkbox name="kategorie" value="Frühstück"></mwc-checkbox>
-                </mwc-formfield>
-                <mwc-formfield label="Mittagessen">
-                    <mwc-checkbox name="kategorie" value="Mittagessen"></mwc-checkbox>
-                </mwc-formfield>
-                <mwc-formfield label="Abendessen">
-                    <mwc-checkbox name="kategorie" value="Abendessen"></mwc-checkbox>
-                </mwc-formfield>
-            </div>
-
-            <div class="zutaten">
-                <label>Zutaten</label><br><br>
-                <mwc-textfield label="Menge" name="menge" type="number" id="menge" min="1" style="width: 100px"></mwc-textfield>
-
-                <mwc-select label="Einheit" id="einheit" style="width: 150px">
-                    <mwc-list-item value="mg">mg</mwc-list-item>
-                    <mwc-list-item value="g">g</mwc-list-item>
-                    <mwc-list-item value="kg">kg</mwc-list-item>
-                    <mwc-list-item value="ml">ml</mwc-list-item>
-                    <mwc-list-item value="l">l</mwc-list-item>
-                    <mwc-list-item value="Stück">Stück</mwc-list-item>
-                    <mwc-list-item value="Prise">Prise</mwc-list-item>
-                    <mwc-list-item value="EL">EL</mwc-list-item>
-                    <mwc-list-item value="TL">TL</mwc-list-item>
-                    <mwc-list-item value="Dose(n)">Dose(n)</mwc-list-item>
-                    <mwc-list-item value="Scheiben(n)">Scheiben(n)</mwc-list-item>
-                </mwc-select>
-
-                <mwc-textfield label="Zutat" name="zutat" id="zutat"></mwc-textfield>
-
-                <mwc-icon-button icon="add" id="hinzufuegen"></mwc-icon-button>
-
-                <br><br>
-                <div id="zutatenListe"></div>
-
-            </div>
-
-            <div class="zubereitung">
-                <mwc-textarea rows="5" cols="55" label="Zubereitung" name="zubereitung"></mwc-textarea>
-            </div>
-
-            <div class="foto">
-                Foto
-            </div>
-
-            <div class="zubereitungszeit">
-                <mwc-textfield label="Zubereitungszeit (min)" name="zubereitungszeit" type="number" min="1" style="width: 200px"></mwc-textfield>
-            </div>
-
-            <div class="speichern">
-                <!--<button style="all: unset;" onclick="re()">-->
-                <button style="all: unset;" type="submit">
-                    <mwc-button raised label="Speichern"></mwc-button>
-                </button>
-            </div>
-        </div>
-    </form>
-
-
-    <script src="../dist/bundle.js" async></script>
-    <script src="../src/rezeptErstellen.js"></script>
+<script src="../dist/bundle.js" async></script>
+<script src="../src/zutatHinzufuegen.js"></script>
 </body>
 </html>
