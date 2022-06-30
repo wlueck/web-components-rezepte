@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
+    <title>Rezepte - VAADIN</title>
+
+    <link rel="stylesheet" href="../src/globalStyles.css">
+    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+</head>
+<body>
+<div class="grid-container-navbar">
+    <div class="home">
+        <vaadin-button onclick="window.location.href = '/';" theme="tertiary-inline">HOME</vaadin-button>
+    </div>
+    <div class="meineRezepte">
+        <vaadin-button onclick="window.location.href = 'meineRezepte';" theme="tertiary-inline">
+            Meine Rezepte
+        </vaadin-button>
+    </div>
+    <div class="rezeptErstellen">
+        <vaadin-button onclick="window.location.href = 'erstellen';" theme="primary">
+            Rezept hinzufügen
+            <vaadin-icon icon="vaadin:arrow-right" slot="suffix"></vaadin-icon>
+        </vaadin-button>
+    </div>
+</div>
+<h3 class="ueberschrift">WILLKOMMEN</h3>
+
+<script src="../dist/bundle.js"></script>
+</body>
+</html>

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
+    <title>Rezepte - VAADIN</title>
+
+    <link rel="stylesheet" href="../src/globalStyles.css">
+    <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Montserrat'>
+</head>
+<body>
+
+    <div class="grid-container-navbar">
+        <div class="home">
+            <vaadin-button onclick="window.location.href = '/';" theme="tertiary-inline">HOME</vaadin-button>
+        </div>
+        <div class="meineRezepte">
+            <vaadin-button onclick="window.location.href = 'meineRezepte';" theme="tertiary-inline">Meine Rezepte</vaadin-button>
+        </div>
+        <div class="rezeptErstellen">
+            <vaadin-button theme="primary" onclick="window.location.href = 'erstellen';" >
+                Rezept hinzufügen
+                <vaadin-icon icon="vaadin:arrow-right" slot="suffix"></vaadin-icon>
+            </vaadin-button>
+        </div>
+    </div>
+    <h3 class="ueberschrift">MEINE REZEPTE</h3>
+
+    <vaadin-accordion id="rezeptListe">
+        <% for(var i=0; i < rezepte.length; i++) { %>
+            <vaadin-accordion-panel theme="reverse">
+                <div slot="summary" style="width: 75vw">
+                    <h3>
+                        <%= rezepte[i].titel %>
+                        <vaadin-button theme="primary" id="zeit" style="float: right;">
+                            <%= rezepte[i].zeit %> min
+                        </vaadin-button>
+                    </h3>
+                    <p><%= rezepte[i].kategorie %></p>
+                    <p><%= rezepte[i].ernaehrungsform %></p>
+                </div>
+                <div>
+                    <table style="width: 100%;">
+                        <tr>
+                            <td style="width: 50%;">
+                                <p>Zutaten für (<%= rezepte[i].personenAnzahl %> Personen):</p>
+                            </td>
+                            <td style="width: 50%;">
+                                <p>Zubereitung:</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="width: 50%; vertical-align: top;">
+                                <table style="width: 390px; border-collapse: collapse; border: 1px solid #EDEDED;">
+                                    <% for(var j = 0; j < rezepte[i].zutaten.length; j++) { %>
+                                        <% if(j % 2 === 0){ %>
+                                        <tr style="background-color: #e8e8e8; border: 2px solid #EDEDED;">
+                                            <% }else{ %>
+                                        <tr style="border: 2px solid #EDEDED;">
+                                            <% } %>
+                                            <td style="padding: 10px 20px; border: 2px solid #EDEDED; width: 70px;"><%= rezepte[i].zutaten[j].menge %> <%= rezepte[i].zutaten[j].einheit %></td>
+                                            <td style="padding: 10px 20px; border: 2px solid #EDEDED;"><%= rezepte[i].zutaten[j].zutat %></td>
+                                        </tr>
+                                    <% } %>
+                                </table>
+                            </td>
+                            <td>
+                                <vaadin-text-area id ="zubereitung" value="<%= rezepte[i].zubereitung %>" disabled></vaadin-text-area>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+
+            </vaadin-accordion-panel>
+        <% } %>
+
+    </vaadin-accordion>
+
+
+    <style>
+
+        #rezeptListe{
+            margin: 0 116px 20px 116px;
+        }
+
+        vaadin-accordion-panel{
+            padding: 20px;
+            border: 1px solid #EBEBEB;
+        }
+        vaadin-accordion-panel:hover{
+            border-left: 4px solid #FFB338;
+        }
+
+        #zeit{
+            float:right;
+        }
+
+        #zubereitung{
+            width: 530px;
+            height: 260px;
+            background-color: #F9F9F9;
+            border: 1px solid #E6E6E6;
+            border-radius: 5px;
+            padding:20px;
+        }
+
+
+    </style>
+
+
+    <script src="../dist/bundle.js"></script>
+
+</body>
+</html>

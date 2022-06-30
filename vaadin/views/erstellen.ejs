@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
+    <title>Rezepte - VAADIN</title>
+    <link rel="stylesheet" href="../src/globalStyles.css">
+    <link rel="stylesheet" href="../src/gridStyle.css">
+    <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Montserrat'>
+    <!--<link rel="import" href="../src/style.html">-->
+</head>
+<body>
+    <div class="grid-container-navbar">
+        <div class="home">
+            <vaadin-button onclick="window.location.href = '/';" theme="tertiary-inline">HOME</vaadin-button>
+        </div>
+
+        <div class="meineRezepte">
+            <vaadin-button onclick="window.location.href = 'meineRezepte';" theme="tertiary-inline">Meine Rezepte</vaadin-button>
+        </div>
+
+        <div class="rezeptErstellen">
+            <vaadin-button theme="primary" onclick="window.location.href = 'erstellen';" >
+                Rezept hinzufügen
+                <vaadin-icon icon="vaadin:arrow-right" slot="suffix"></vaadin-icon>
+            </vaadin-button>
+        </div>
+
+    </div>
+
+    <h3 class="ueberschrift">REZEPT ERSTELLEN</h3>
+
+    <form action="/erstellen" method="POST">
+        <div class="grid-container-main">
+
+            <div class="titel">
+                <vaadin-text-field style="width: 500px" label="Titel" name="titel" required></vaadin-text-field>
+            </div>
+
+            <div class="personenanzahl">
+                <vaadin-integer-field value="1" has-controls min="1" label="Personenanzahl" name="personenAnzahl"></vaadin-integer-field>
+            </div>
+
+            <div class="ernaehrungsform">
+                <vaadin-radio-group label="Ernährungsform" theme="vertical" name="ernaehrungsform">
+                    <vaadin-radio-button value="vegetarisch" label="vegetarisch" name="ernaehrungsform"></vaadin-radio-button>
+                    <vaadin-radio-button value="nicht vegetarisch" label="nicht vegetarisch" name="ernaehrungsform"></vaadin-radio-button>
+                </vaadin-radio-group>
+            </div>
+
+            <div class="kategorie">
+                <vaadin-checkbox-group label="Kategorie" name="kategorie">
+                    <vaadin-checkbox value="Frühstück" label="Frühstück" name="kategorie"></vaadin-checkbox>
+                    <vaadin-checkbox value="Mittagessen" label="Mittagessen" name="kategorie"></vaadin-checkbox>
+                    <vaadin-checkbox value="Abendessen" label="Abendessen" name="kategorie"></vaadin-checkbox>
+                </vaadin-checkbox-group>
+            </div>
+
+            <div class="zutaten">
+
+                <label style="font-size: 14px; color: #1B2B41B0">Zutaten</label><br>
+                <vaadin-integer-field has-controls min="1" placeholder="Menge" name="menge" id="menge"></vaadin-integer-field>
+
+                <vaadin-combo-box
+                        placeholder="Einheit"
+                        name="einheit" id="einheit"
+                        style="width: 100px"
+                ></vaadin-combo-box>
+                <script>
+                    const comboBox = document.querySelector('vaadin-combo-box');
+                    comboBox.items = ['mg', 'g', 'kg', 'ml', 'l', 'Stück', 'Prise', 'EL', 'TL', 'Dose(n)', 'Scheibe(n)'];
+                </script>
+
+                <vaadin-text-field id="zutat" placeholder="Zutat" name="zutat"></vaadin-text-field>
+
+                <vaadin-button theme="icon primary" style="border-radius: 50px;" id="hinzufuegen">
+                    +
+                </vaadin-button>
+
+                <br><br>
+                <div id="zutatenListe"></div>
+            </div>
+
+            <div class="zubereitung">
+                <vaadin-text-area style="min-height: 216px; min-width: 450px;" label="Zubereitung" name="zubereitung"></vaadin-text-area>
+            </div>
+
+            <div class="foto">
+                Foto
+            </div>
+
+            <div class="zubereitungszeit">
+                <vaadin-number-field label="Zubereitungszeit" name="zubereitungszeit" required>
+                    <div slot="suffix">min</div>
+                </vaadin-number-field>
+            </div>
+
+            <div class="speichern">
+                <button type="submit" style="all: unset;">
+                    <vaadin-button theme="primary">Speichern</vaadin-button>
+                </button>
+            </div>
+
+        </div>
+    </form>
+
+<script src="dist/bundle.js"></script>
+<script src="../src/rezeptErstellen.js"></script>
+
+</body>
+</html>
