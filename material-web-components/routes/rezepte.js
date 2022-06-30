@@ -8,7 +8,6 @@ router.get("/", (req, res) => {
 
 router.get("/meineRezepte", (req, res) => {
     let data = require("../data/rezepte.json");
-
     res.render("meineRezepte", {rezepte: data});
 })
 
@@ -19,23 +18,24 @@ router.get("/erstellen", (req, res) => {
 router.post("/erstellen", (req, res) => {
 
     let zutaten = [];
-    if(req.body.zutaten!==undefined && Array.isArray(req.body.zutaten)) {
+    if (req.body.zutaten !== undefined && Array.isArray(req.body.zutaten)) {
         for (let i = 0; i < req.body.zutaten.length; i++) {
             let arr = req.body.zutaten[i].split(/(\s+)/);
             zutaten.push({"menge": arr[0], "einheit": arr[2], "zutat": arr.slice(4).join('')});
         }
-    }else if(req.body.zutaten!==undefined){
+    } else if (req.body.zutaten !== undefined) {
         let arr = req.body.zutaten.split(" ");
         zutaten.push({"menge": arr[0], "einheit": arr[1], "zutat": arr.slice(2).join(' ')})
     }
 
-    let newData = { "titel": req.body.titel,
-                    "personenAnzahl": req.body.personenAnzahl,
-                    "ernaehrungsform": req.body.ernaehrungsform,
-                    "kategorie": req.body.kategorie,
-                    "zutaten": zutaten,
-                    "zubereitung": req.body.zubereitung,
-                    "zeit": req.body.zubereitungszeit
+    let newData = {
+        "titel": req.body.titel,
+        "personenAnzahl": req.body.personenAnzahl,
+        "ernaehrungsform": req.body.ernaehrungsform,
+        "kategorie": req.body.kategorie,
+        "zutaten": zutaten,
+        "zubereitung": req.body.zubereitung,
+        "zeit": req.body.zubereitungszeit
     };
 
     let oldData = require("../data/rezepte.json");
