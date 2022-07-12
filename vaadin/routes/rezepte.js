@@ -1,3 +1,7 @@
+/**
+ *  Definiition der Routen
+ */
+
 const express = require("express");
 const router = express.Router();
 const fs = require('fs');
@@ -18,6 +22,7 @@ router.get("/erstellen", (req, res) => {
 router.post("/erstellen", (req, res) => {
 
     console.log(req.body)
+
     let zutaten = [];
     if (req.body.zutaten !== undefined && Array.isArray(req.body.zutaten)) {
         for (let i = 0; i < req.body.zutaten.length; i++) {

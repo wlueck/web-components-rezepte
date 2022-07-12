@@ -1,3 +1,8 @@
+/**
+ *  Skript zum Hinzufügen und Entfernen von Zutaten (Menge, Einheit, Zutat)
+ *  in eine Liste
+ */
+
 let zutat = document.getElementById("zutat");
 let menge = document.getElementById("menge");
 let einheit = document.getElementById("einheit")

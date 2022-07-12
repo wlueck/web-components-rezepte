@@ -6,7 +6,7 @@ module.exports = function(env, { mode }) {
         mode: production ? 'production' : 'development',
         devtool: production ? 'source-map' : 'inline-source-map',
         entry: {
-            app: ['./src/main.ts']
+            app: ['./src/app.ts']
         },
         output: {
             filename: 'bundle.js',
