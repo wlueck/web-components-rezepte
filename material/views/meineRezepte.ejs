@@ -40,7 +40,6 @@
             border-radius: 5px;
             padding: 20px;
         }
-
     </style>
 
 </head>
@@ -85,14 +84,14 @@
                         <td style="width: 50%; vertical-align: top;">
                             <table style="width: 390px; border-collapse: collapse; border: 1px solid #EDEDED;">
                                 <% for(var j = 0; j < rezepte[i].zutaten.length; j++) { %>
-                                <% if(j % 2 === 0){ %>
-                                <tr style="background-color: #e8e8e8; border: 2px solid #EDEDED;">
-                                    <% }else{ %>
-                                <tr style="border: 2px solid #EDEDED;">
-                                    <% } %>
-                                    <td style="padding: 10px 20px; border: 2px solid #EDEDED; width: 70px;"><%= rezepte[i].zutaten[j].menge %> <%= rezepte[i].zutaten[j].einheit %></td>
-                                    <td style="padding: 10px 20px; border: 2px solid #EDEDED;"><%= rezepte[i].zutaten[j].zutat %></td>
-                                </tr>
+                                    <% if(j % 2 === 0){ %>
+                                    <tr style="background-color: #e8e8e8; border: 2px solid #EDEDED;">
+                                        <% }else{ %>
+                                    <tr style="border: 2px solid #EDEDED;">
+                                        <% } %>
+                                        <td style="padding: 10px 20px; border: 2px solid #EDEDED; width: 70px;"><%= rezepte[i].zutaten[j].menge %> <%= rezepte[i].zutaten[j].einheit %></td>
+                                        <td style="padding: 10px 20px; border: 2px solid #EDEDED;"><%= rezepte[i].zutaten[j].zutat %></td>
+                                    </tr>
                                 <% } %>
                             </table>
                         </td>
