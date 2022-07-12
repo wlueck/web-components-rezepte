@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
+    <title>Rezepte - FAST</title>
+    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+
+</head>
+<body>
+
+    <fluent-design-system-provider use-defaults accent-base-color="#FFB338">
+
+        <header-tag></header-tag>
+
+        <ueberschrift-tag ueberschrift="Meine Rezepte"></ueberschrift-tag>
+
+        <fluent-accordion id="rezeptListe">
+
+            <%for(var i=0; i < rezepte.length; i++) {%>
+                <%= rezepte[i].ernaehrungsform %>
+                <rezept-card
+                        titel=<%= rezepte[i].titel %>
+                        ernaehrungsform=<%= rezepte[i].ernaehrungsform %>
+                        kategorie=<%= rezepte[i].kategorie %>
+                        zeit=<%= rezepte[i].zeit %>
+                        personenAnzahl=<%= rezepte[i].personenAnzahl %>
+                        zubereitung=<%= rezepte[i].zubereitung %>
+                        <% var str = "";
+                            for (let j = 0; j < rezepte[i].zutaten.length; j++){
+                                str += "" + rezepte[i].zutaten[j].menge + "" + rezepte[i].zutaten[j].einheit + " " + rezepte[i].zutaten[j].zutat + "\n";
+
+                            }%>
+                        zutaten=<%= str %>
+                >
+                </rezept-card>
+            <% } %>
+
+        </fluent-accordion>
+
+
+    </fluent-design-system-provider>
+
+    <style type="text/css">
+
+        body{
+            font-family: 'Montserrat';
+        }
+
+        #rezeptListe{
+            margin: 0px 116px 20px 116px;
+        }
+
+    </style>
+
+    <script src="../dist/bundle.js"></script>
+
+    <script>
+        /*
+            mydata = av;
+            var output = document.getElementById("rezeptListe");
+
+            for (let i = 0; i < mydata.length; i++){
+                var card = document.createElement("rezept-card");
+
+                card.setAttribute("titel", mydata[i].titel);
+                card.setAttribute("ernaehrungsform", mydata[i].ernaehrungsform);
+                card.setAttribute("kategorie", mydata[i].kategorie);
+                card.setAttribute("zeit", mydata[i].zeit);
+                card.setAttribute("zubereitung", mydata[i].zubereitung);
+
+                var str = "";
+                for (let j = 0; j < mydata[i].zutaten.length; j++){
+
+                    str += "" + mydata[i].zutaten[j].menge + "" + mydata[i].zutaten[j].einheit + " " + mydata[i].zutaten[j].zutat + "\n";
+                }
+                card.setAttribute("zutaten", str);
+                // @ts-ignore: Object is possibly 'null'.
+                output.appendChild(card);
+            }
+
+         */
+
+
+    </script>
+
+</body>
+</html>

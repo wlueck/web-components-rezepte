@@ -1,0 +1,54 @@
+/**
+ *  Style fuer die Anordnung der Komponenten
+ *  in der Erstellen-Ansicht
+ */
+.titel {
+    grid-row: 1 / 2;
+    grid-column: 1 / 3;
+}
+
+.personenanzahl {
+    grid-row: 1 / 2;
+    grid-column: 3/ 4;
+}
+
+.ernaehrungsform {
+    grid-row: 1 / 2;
+    grid-column: 4/ 5;
+}
+
+.kategorie {
+    grid-row: 2 / 3;
+    grid-column: 1 / 3;
+}
+
+.zutaten {
+    grid-row: 3 / 5;
+    grid-column: 1 / 3;
+}
+
+.zubereitung {
+    grid-row: 3 / 5;
+    grid-column: 3 / 5;
+}
+
+.zubereitungszeit {
+    grid-row: 5 / 6;
+    grid-column: 3/ 5;
+}
+
+.speichern {
+    grid-row: 6 / 7;
+    grid-column: 1/ 3;
+}
+
+.grid-container-main {
+    display: grid;
+    grid-template-columns: 25% 25% 25% 25%;
+    grid-template-rows: auto auto auto auto;
+    padding: 0 116px 20px 116px;
+}
+
+.grid-container-main > div {
+    padding: 22px 0;
+}
