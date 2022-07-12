@@ -1,4 +1,7 @@
-body{
+/**
+ *  Festlegen des Styles fuer die Komponenten
+ */
+body {
     font-family: 'Montserrat', serif;
     --lumo-primary-text-color: rgb(0, 0, 0);
     --lumo-primary-color-50pct: rgba(218, 140, 24, 0.5);
@@ -6,32 +9,37 @@ body{
     --lumo-primary-color: #DA8C18;
 }
 
-.grid-container-navbar{
+/**
+ *  Style fuer die Navbar
+ */
+.grid-container-navbar {
     display: grid;
     grid-template-columns: auto auto auto;
 }
+
 .grid-container-navbar > div {
     padding: 20px 50px;
 }
-.home{
+
+.home {
     text-align: left;
 }
-.meineRezepte{
+
+.meineRezepte {
     text-align: center;
 }
-.rezeptErstellen{
+
+.rezeptErstellen {
     text-align: right;
 }
-.ueberschrift{
+
+/**
+ *  Style fuer die Ueberschrift
+ */
+.ueberschrift {
     padding: 10px 0 20px 116px;
 }
 
-vaadin-button{
+vaadin-button {
     cursor: pointer;
 }
-
-/*
-[theme~="dark"] {
-}
-
- */
