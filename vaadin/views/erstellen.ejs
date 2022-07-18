@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
     <title>Rezepte - VAADIN</title>
@@ -38,15 +38,13 @@
 
         <div class="personenanzahl">
             <vaadin-integer-field value="1" has-controls min="1" label="Personenanzahl"
-                                  name="personenAnzahl"></vaadin-integer-field>
+                                  name="personenAnzahl" required></vaadin-integer-field>
         </div>
 
         <div class="ernaehrungsform">
             <vaadin-radio-group label="Ernährungsform" theme="vertical" name="ernaehrungsform">
-                <vaadin-radio-button value="vegetarisch" label="vegetarisch"
-                                     name="ernaehrungsform"></vaadin-radio-button>
-                <vaadin-radio-button value="nicht vegetarisch" label="nicht vegetarisch"
-                                     name="ernaehrungsform"></vaadin-radio-button>
+                <vaadin-radio-button value="vegetarisch" label="vegetarisch"></vaadin-radio-button>
+                <vaadin-radio-button value="nicht vegetarisch" label="nicht vegetarisch"></vaadin-radio-button>
             </vaadin-radio-group>
         </div>
 
@@ -90,7 +88,7 @@
         </div>
 
         <div class="zubereitungszeit">
-            <vaadin-number-field label="Zubereitungszeit" name="zubereitungszeit" required>
+            <vaadin-number-field label="Zubereitungszeit" name="zubereitungszeit" min="1" required>
                 <div slot="suffix">min</div>
             </vaadin-number-field>
         </div>
