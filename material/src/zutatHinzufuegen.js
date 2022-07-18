@@ -10,10 +10,12 @@ let hinzufuegenButton = document.getElementById("hinzufuegen");
 let output = document.getElementById("zutatenListe");
 
 hinzufuegenButton.addEventListener("click", function () {
-    addZutat();
-    zutat.value = "";
-    menge.value = "";
-    einheit.value = "";
+    if(zutat.value !== ""){
+        addZutat();
+        zutat.value = "";
+        menge.value = "";
+        einheit.value = "";
+    }
 });
 
 function addZutat() {

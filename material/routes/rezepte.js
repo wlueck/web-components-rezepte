@@ -1,5 +1,6 @@
 /**
- *  Definiition der Routen
+ *  Definiition der Routen, sowie das Speichern von neuen Rezepten
+ *  in der JSON Datei
  */
 
 const express = require("express");
@@ -29,7 +30,7 @@ router.post("/erstellen", (req, res) => {
         }
     } else if (req.body.zutaten !== undefined) {
         let arr = req.body.zutaten.split(" ");
-        zutaten.push({"menge": arr[0], "einheit": arr[1], "zutat": arr.slice(2).join(' ')})
+        zutaten.push({"menge": arr[0], "einheit": arr[1], "zutat": arr.slice(2).join(' ')});
     }
 
     let newData = {
@@ -51,4 +52,4 @@ router.post("/erstellen", (req, res) => {
     res.redirect("meineRezepte");
 })
 
-module.exports = router
+module.exports = router;
