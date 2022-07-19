@@ -16,7 +16,7 @@
 
     <ueberschrift-tag ueberschrift="Rezept erstellen"></ueberschrift-tag>
 
-    <form action="/erstellen" method="POST" onsubmit="return validateForm()">
+    <form action="/erstellen" method="POST">
         <div class="grid-container-main">
 
             <div class="titel">
@@ -59,13 +59,19 @@
 
                 <fluent-select placeholder="Einheit" position="below" autocomplete="both" style="min-width: 50px;"
                                id="einheit">
+                    <fluent-option value="Stück">Stück</fluent-option>
                     <fluent-option value="mg">mg</fluent-option>
                     <fluent-option value="g">g</fluent-option>
                     <fluent-option value="kg">kg</fluent-option>
                     <fluent-option value="ml">ml</fluent-option>
                     <fluent-option value="l">l</fluent-option>
-                    <fluent-option value="Stück">Stück</fluent-option>
-                    <fluent-option value="Packung(en)">Packung(en)</fluent-option>
+                    <fluent-option value="Prise">Prise</fluent-option>
+                    <fluent-option value="Pck.">Pck.</fluent-option>
+                    <fluent-option value="EL">EL</fluent-option>
+                    <fluent-option value="TL">TL</fluent-option>
+                    <fluent-option value="Dose(n)">Dose(n)</fluent-option>
+                    <fluent-option value="Scheibe(n)">Scheibe(n)</fluent-option>
+                    <fluent-option value="Flasche(n)">Flasche(n)</fluent-option>
                 </fluent-select>
 
                 <fluent-text-field appearance="filled" placeholder="Zutat" id="zutat"></fluent-text-field>
@@ -104,15 +110,6 @@
 
 <script src="../src/zutatHinzufuegen.js"></script>
 <script src="../dist/bundle.js"></script>
-<script>
-    function validateForm() {
-        console.log("hi");
-        let i = document.getElementByName("titel");
-        if (i.val) {
-            return false;
-        }
-    }
-</script>
 
 </body>
 </html>

@@ -6,79 +6,102 @@
 
     <link rel="stylesheet" href="../src/app.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+    <style>
+        fluent-accordion-item {
+            padding: 20px;
+            border: 1px solid #EBEBEB;
+        }
+
+        fluent-accordion-item:hover {
+            border-left: 4px solid #FFB338;
+        }
+
+        fluent-button {
+            float: right;
+        }
+
+        fluent-card {
+            width: auto;
+            height: auto;
+            background-color: #F9F9F9;
+            border: 1px solid #E6E6E6;
+            border-radius: 5px;
+            padding: 20px;
+        }
+    </style>
 </head>
 <body>
 
-    <fluent-design-system-provider use-defaults accent-base-color="#FFB338">
+<fluent-design-system-provider use-defaults accent-base-color="#FFB338">
 
-        <header-tag></header-tag>
+    <header-tag></header-tag>
 
-        <ueberschrift-tag ueberschrift="Meine Rezepte"></ueberschrift-tag>
+    <ueberschrift-tag ueberschrift="Meine Rezepte"></ueberschrift-tag>
 
-        <fluent-accordion id="rezeptListe">
+    <fluent-accordion id="rezeptListe">
 
-            <%for(var i=0; i < rezepte.length; i++) {%>
+        <% for(var i = 0; i < rezepte.length; i++) { %>
+
+            <fluent-accordion-item>
+        <span slot="heading">
+            <h3>
+                <%= rezepte[i].titel %>
+                <fluent-button appearance="accent">
+                    <%= rezepte[i].zeit %> min
+                </fluent-button>
+            </h3>
+            <p>
+                <%= rezepte[i].kategorie %>
+            </p>
+            <p>
                 <%= rezepte[i].ernaehrungsform %>
-                <rezept-card
-                        titel=<%= rezepte[i].titel %>
-                        ernaehrungsform=<%= rezepte[i].ernaehrungsform %>
-                        kategorie=<%= rezepte[i].kategorie %>
-                        zeit=<%= rezepte[i].zeit %>
-                        personenAnzahl=<%= rezepte[i].personenAnzahl %>
-                        zubereitung=<%= rezepte[i].zubereitung %>
-                        <% var str = "";
-                            for (let j = 0; j < rezepte[i].zutaten.length; j++){
-                                str += "" + rezepte[i].zutaten[j].menge + "" + rezepte[i].zutaten[j].einheit + " " + rezepte[i].zutaten[j].zutat + "\n";
+            </p>
+        </span>
+                <fluent-data-grid>
+                    <fluent-data-grid-row>
+                        <fluent-data-grid-cell grid-column="1">
+                            <p>Zutaten für <%= rezepte[i].personenAnzahl %> Personen:</p>
 
-                            }%>
-                        zutaten=<%= str %>
-                >
-                </rezept-card>
-            <% } %>
+                            <table style="width: 390px; border-collapse: collapse; border: 1px solid #EDEDED;">
+                                <% for(var j = 0; j < rezepte[i].zutaten.length; j++) { %>
+                                    <% if(j % 2 === 0){ %>
+                                    <tr style="background-color: #e8e8e8; border: 2px solid #EDEDED;">
+                                        <% }else{ %>
+                                    <tr style="border: 2px solid #EDEDED;">
+                                        <% } %>
+                                        <td style="padding: 10px 20px; border: 2px solid #EDEDED; width: 70px;"><%= rezepte[i].zutaten[j].menge %> <%= rezepte[i].zutaten[j].einheit %></td>
+                                        <td style="padding: 10px 20px; border: 2px solid #EDEDED;"><%= rezepte[i].zutaten[j].zutat %></td>
+                                    </tr>
+                                <% } %>
+                            </table>
 
-        </fluent-accordion>
+                        </fluent-data-grid-cell>
+                        <fluent-data-grid-cell grid-column="2">
+                            <p>Zubereitung:</p>
+                            <fluent-text-area cols="60" style="padding: 5px" value="<%= rezepte[i].zubereitung %>"
+                                              appearance="filled" readonly>
+                            </fluent-text-area>
 
+                        </fluent-data-grid-cell>
+                    </fluent-data-grid-row>
+                </fluent-data-grid>
+            </fluent-accordion-item>
 
-    </fluent-design-system-provider>
-
-    <style type="text/css">
-
-        #rezeptListe{
-            margin: 0px 116px 20px 116px;
-        }
-
-    </style>
-
-    <script src="../dist/bundle.js"></script>
-
-    <script>
-        /*
-            mydata = av;
-            var output = document.getElementById("rezeptListe");
-
-            for (let i = 0; i < mydata.length; i++){
-                var card = document.createElement("rezept-card");
-
-                card.setAttribute("titel", mydata[i].titel);
-                card.setAttribute("ernaehrungsform", mydata[i].ernaehrungsform);
-                card.setAttribute("kategorie", mydata[i].kategorie);
-                card.setAttribute("zeit", mydata[i].zeit);
-                card.setAttribute("zubereitung", mydata[i].zubereitung);
-
-                var str = "";
-                for (let j = 0; j < mydata[i].zutaten.length; j++){
-
-                    str += "" + mydata[i].zutaten[j].menge + "" + mydata[i].zutaten[j].einheit + " " + mydata[i].zutaten[j].zutat + "\n";
-                }
-                card.setAttribute("zutaten", str);
-                // @ts-ignore: Object is possibly 'null'.
-                output.appendChild(card);
-            }
-
-         */
+        <% } %>
+    </fluent-accordion>
 
 
-    </script>
+</fluent-design-system-provider>
+
+<style type="text/css">
+
+    #rezeptListe {
+        margin: 0px 116px 20px 116px;
+    }
+
+</style>
+
+<script src="../dist/bundle.js"></script>
 
 </body>
 </html>

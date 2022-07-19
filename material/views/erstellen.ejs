@@ -33,7 +33,8 @@
         </div>
 
         <div class="personenanzahl">
-            <mwc-textfield label="Personenanzahl" name="personenAnzahl" type="number" min="1" step="1" required></mwc-textfield>
+            <mwc-textfield label="Personenanzahl" name="personenAnzahl" type="number" min="1" step="1"
+                           required></mwc-textfield>
         </div>
 
         <div class="ernaehrungsform">
@@ -64,17 +65,19 @@
             <mwc-textfield label="Menge" type="number" id="menge" min="1" style="width: 100px"></mwc-textfield>
 
             <mwc-select label="Einheit" id="einheit" style="width: 130px">
+                <mwc-list-item value="Stück">Stück</mwc-list-item>
                 <mwc-list-item value="mg">mg</mwc-list-item>
                 <mwc-list-item value="g">g</mwc-list-item>
                 <mwc-list-item value="kg">kg</mwc-list-item>
                 <mwc-list-item value="ml">ml</mwc-list-item>
                 <mwc-list-item value="l">l</mwc-list-item>
-                <mwc-list-item value="Stück">Stück</mwc-list-item>
                 <mwc-list-item value="Prise">Prise</mwc-list-item>
+                <mwc-list-item value="Pck.">Pck.</mwc-list-item>
                 <mwc-list-item value="EL">EL</mwc-list-item>
                 <mwc-list-item value="TL">TL</mwc-list-item>
                 <mwc-list-item value="Dose(n)">Dose(n)</mwc-list-item>
                 <mwc-list-item value="Scheiben(n)">Scheiben(n)</mwc-list-item>
+                <mwc-list-item value="Flasche(n)">Flasche</mwc-list-item>
             </mwc-select>
 
             <mwc-textfield label="Zutat" id="zutat"></mwc-textfield>
