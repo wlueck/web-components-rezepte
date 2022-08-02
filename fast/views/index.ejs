@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
     <title>Rezepte - FAST</title>
@@ -11,13 +11,21 @@
 <body>
 
 <fluent-design-system-provider use-defaults accent-base-color="#FFB338">
-
-    <header-tag></header-tag>
-
-    <ueberschrift-tag ueberschrift="Willkommen"></ueberschrift-tag>
-
+    <div class="grid-container-navbar">
+        <div class="brandName">
+            <fluent-anchor href="/" appearance="stealth">HOME</fluent-anchor>
+        </div>
+        <div class="meineRezepte">
+            <fluent-anchor href="meineRezepte" appearance="stealth">Meine Rezepte</fluent-anchor>
+        </div>
+        <div class="rezeptErstellen">
+            <fluent-anchor href="erstellen" appearance="accent">Rezept hinzufügen -></fluent-anchor>
+        </div>
+    </div>
+    <h3 class="ueberschrift">WILLKOMMEN</h3>
 </fluent-design-system-provider>
 
 <script src="../dist/bundle.js"></script>
+
 </body>
 </html>

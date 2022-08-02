@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns="http://www.w3.org/1999/html">
+<html lang="de">
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
     <title>Rezepte - VAADIN</title>
@@ -9,25 +9,22 @@
     <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Montserrat'>
 </head>
 <body>
+
 <div class="grid-container-navbar">
     <div class="home">
         <vaadin-button onclick="window.location.href = '/';" theme="tertiary-inline">HOME</vaadin-button>
     </div>
-
     <div class="meineRezepte">
         <vaadin-button onclick="window.location.href = 'meineRezepte';" theme="tertiary-inline">Meine Rezepte
         </vaadin-button>
     </div>
-
     <div class="rezeptErstellen">
         <vaadin-button theme="primary" onclick="window.location.href = 'erstellen';">
             Rezept hinzufügen
             <vaadin-icon icon="vaadin:arrow-right" slot="suffix"></vaadin-icon>
         </vaadin-button>
     </div>
-
 </div>
-
 <h3 class="ueberschrift">REZEPT ERSTELLEN</h3>
 
 <form action="/erstellen" method="POST">
@@ -38,8 +35,7 @@
         </div>
 
         <div class="personenanzahl">
-            <vaadin-integer-field value="1" has-controls min="1" label="Personenanzahl"
-                                  name="personenAnzahl" required></vaadin-integer-field>
+            <vaadin-integer-field value="1" has-controls min="1" label="Personenanzahl" name="personenAnzahl" required></vaadin-integer-field>
         </div>
 
         <div class="ernaehrungsform">
@@ -58,16 +54,11 @@
         </div>
 
         <div class="zutaten">
-
             <label style="font-size: 14px; color: #1B2B41B0">Zutaten</label><br>
-            <vaadin-integer-field has-controls min="1" placeholder="Menge" name="menge"
-                                  id="menge"></vaadin-integer-field>
 
-            <vaadin-combo-box
-                    placeholder="Einheit"
-                    name="einheit" id="einheit"
-                    style="width: 100px"
-            ></vaadin-combo-box>
+            <vaadin-integer-field has-controls min="1" placeholder="Menge" name="menge" id="menge"></vaadin-integer-field>
+
+            <vaadin-combo-box placeholder="Einheit" name="einheit" id="einheit" style="width: 100px"></vaadin-combo-box>
             <script>
                 const comboBox = document.querySelector('vaadin-combo-box');
                 comboBox.items = ['Stück', 'mg', 'g', 'kg', 'ml', 'l', 'Prise', 'Pck.', 'EL', 'TL', 'Dose(n)', 'Scheibe(n)', 'Flasche(n)'];
@@ -75,17 +66,14 @@
 
             <vaadin-text-field id="zutat" placeholder="Zutat" name="zutat"></vaadin-text-field>
 
-            <vaadin-button theme="icon primary" style="border-radius: 50px;" id="hinzufuegen">
-                +
-            </vaadin-button>
+            <vaadin-button theme="icon primary" style="border-radius: 50px;" id="hinzufuegen">+</vaadin-button>
 
             <br><br>
             <div id="zutatenListe"></div>
         </div>
 
         <div class="zubereitung">
-            <vaadin-text-area style="min-height: 216px; min-width: 450px;" label="Zubereitung"
-                              name="zubereitung"></vaadin-text-area>
+            <vaadin-text-area style="min-height: 216px; min-width: 450px;" label="Zubereitung" name="zubereitung"></vaadin-text-area>
         </div>
 
         <div class="zubereitungszeit">

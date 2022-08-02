@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
     <title>Rezepte - MATERIAL</title>
@@ -43,6 +43,7 @@
     </style>
 </head>
 <body>
+
 <div class="grid-container-navbar">
     <div class="home">
         <mwc-button onclick="window.location.href = '/';" label="HOME"></mwc-button>
@@ -51,8 +52,7 @@
         <mwc-button onclick="window.location.href = 'meineRezepte';" label="Meine Rezepte"></mwc-button>
     </div>
     <div class="rezeptErstellen">
-        <mwc-button onclick="window.location.href = 'erstellen';" raised label="Rezept hinzufügen" icon="arrow_forward"
-                    trailingIcon></mwc-button>
+        <mwc-button onclick="window.location.href = 'erstellen';" raised label="Rezept hinzufügen" icon="arrow_forward" trailingIcon></mwc-button>
     </div>
 </div>
 <h3 class="ueberschrift">MEINE REZEPTE</h3>
@@ -94,15 +94,13 @@
                             </table>
                         </td>
                         <td style="width: 50%; vertical-align: top;">
-                            <mwc-textarea id="zubereitung" placeholder="<%= rezepte[i].zubereitung %>"
-                                          disabled></mwc-textarea>
+                            <mwc-textarea id="zubereitung" placeholder="<%= rezepte[i].zubereitung %>" disabled></mwc-textarea>
                         </td>
                     </tr>
                 </table>
             </div>
         </div>
     <% } %>
-
 </div>
 
 <script>
@@ -125,5 +123,6 @@
 </script>
 
 <script src="../dist/bundle.js" async></script>
+
 </body>
 </html>
