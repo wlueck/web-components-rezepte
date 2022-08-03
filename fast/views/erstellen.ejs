@@ -34,21 +34,21 @@
             </div>
 
             <div class="personenanzahl">
-                <fluent-number-field appearance="filled" value="1" min="1" name="personenAnzahl">
+                <fluent-number-field appearance="filled" min="1" name="personenAnzahl" required>
                     <label>Personenanzahl</label>
                 </fluent-number-field>
             </div>
 
             <div class="ernaehrungsform">
                 <fluent-radio-group orientation="horizontal" name="ernaehrungsform" value="">
-                    <label slot="label" slot="label">Ernährungsform</label>
+                    <label slot="label">Ernährungsform</label>
                     <fluent-radio value="vegetarisch">Vegetarisch</fluent-radio>
                     <fluent-radio value="nicht vegetarisch">Nicht vegetarisch</fluent-radio>
                 </fluent-radio-group>
             </div>
 
             <div class="kategorie">
-                <label>Kategorie</label>
+                <label >Kategorie</label>
                 <br>
                 <fluent-checkbox-group name="kategorie">
                     <fluent-checkbox value="Frühstück" name="kategorie">Frühstück</fluent-checkbox>
@@ -60,7 +60,7 @@
             <div class="zutaten">
                 <label>Zutaten</label><br>
 
-                <fluent-number-field placeholder="Menge" minlength="0" size="6" id="menge"></fluent-number-field>
+                <fluent-number-field placeholder="Menge" min="0.1" step="0.1" size="6" id="menge"></fluent-number-field>
 
                 <fluent-select placeholder="Einheit" position="below" autocomplete="both" style="min-width: 50px;" id="einheit">
                     <fluent-option value="Stück">Stück</fluent-option>
@@ -92,7 +92,7 @@
             </div>
 
             <div class="zubereitungszeit">
-                <fluent-number-field appearance="filled" value="1" min="1" name="zeit">
+                <fluent-number-field appearance="filled" value="1" min="0.1" step="0.1" name="zeit">
                     <label>Zubereitungszeit (min)</label>
                 </fluent-number-field>
             </div>

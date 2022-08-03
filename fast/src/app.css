@@ -2,7 +2,7 @@
  *  Festlegen des Styles fuer die Komponenten
  */
 body {
-    font-family: 'Montserrat';
+    font-family: 'Montserrat', serif;
 }
 
 /**
@@ -34,4 +34,12 @@ body {
  */
 .ueberschrift {
     padding: 10px 0 20px 116px;
+}
+
+/**
+ *  Style die Labels in der Erstellen Ansicht
+ */
+label{
+    font-size: 16px;
+    font-family: 'Montserrat', serif;
 }

@@ -56,7 +56,7 @@
         <div class="zutaten">
             <label style="font-size: 14px; color: #1B2B41B0">Zutaten</label><br>
 
-            <vaadin-integer-field has-controls min="1" placeholder="Menge" name="menge" id="menge"></vaadin-integer-field>
+            <vaadin-number-field has-controls min="0.1" step="0.1" placeholder="Menge" name="menge" id="menge"></vaadin-number-field>
 
             <vaadin-combo-box placeholder="Einheit" name="einheit" id="einheit" style="width: 100px"></vaadin-combo-box>
             <script>
@@ -77,7 +77,7 @@
         </div>
 
         <div class="zubereitungszeit">
-            <vaadin-number-field label="Zubereitungszeit" name="zubereitungszeit" min="1" required>
+            <vaadin-number-field label="Zubereitungszeit" name="zubereitungszeit" min="0.1" step="0.1" required>
                 <div slot="suffix">min</div>
             </vaadin-number-field>
         </div>
