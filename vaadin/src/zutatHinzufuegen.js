@@ -26,7 +26,6 @@ function addZutat() {
     newZutat.button.addEventListener("click", function () {
         output.removeChild(newZutat.listElement);
     });
-    console.log(newZutat.zutat);
     newZutat.list.setAttribute("type", "text");
     newZutat.list.setAttribute("name", "zutaten");
     newZutat.list.setAttribute("value", newZutat.zutat.data);
