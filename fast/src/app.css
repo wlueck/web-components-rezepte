@@ -6,6 +6,14 @@ body {
 }
 
 /**
+ *  Verhindert, dass ungestylte Elemente angezeigt
+ *  werden (flash)
+ */
+:not(:defined) {
+    visibility: hidden;
+}
+
+/**
  *  Style fuer die Navbar
  */
 .grid-container-navbar {
