@@ -10,16 +10,16 @@
 </head>
 <body>
 
-<fluent-design-system-provider use-defaults accent-base-color="#FFB338">
+<fast-design-system-provider accent-color="#FFAC20" id="app">
     <div class="grid-container-navbar">
         <div class="brandName">
-            <fluent-anchor href="/" appearance="stealth">HOME</fluent-anchor>
+            <fast-anchor href="/" appearance="lightweight">HOME</fast-anchor>
         </div>
         <div class="meineRezepte">
-            <fluent-anchor href="meineRezepte" appearance="stealth">Meine Rezepte</fluent-anchor>
+            <fast-anchor href="meineRezepte" appearance="lightweight">Meine Rezepte</fast-anchor>
         </div>
         <div class="rezeptErstellen">
-            <fluent-anchor href="erstellen" appearance="accent">Rezept hinzufügen -></fluent-anchor>
+            <fast-anchor href="erstellen" appearance="accent">Rezept hinzufügen -></fast-anchor>
         </div>
     </div>
     <h3 class="ueberschrift">REZEPT ERSTELLEN</h3>
@@ -28,82 +28,79 @@
         <div class="grid-container-main">
 
             <div class="titel">
-                <fluent-text-field placeholder="Titel" appearance="filled" type="text" name="titel" required>
+                <fast-text-field placeholder="Titel" appearance="filled" type="text" name="titel" required>
                     <label>Rezepttitel</label>
-                </fluent-text-field>
+                </fast-text-field>
             </div>
 
             <div class="personenanzahl">
-                <fluent-number-field appearance="filled" min="1" name="personenAnzahl" required>
+                <fast-number-field appearance="filled" min="1" name="personenAnzahl" required>
                     <label>Personenanzahl</label>
-                </fluent-number-field>
+                </fast-number-field>
             </div>
 
             <div class="ernaehrungsform">
-                <fluent-radio-group orientation="horizontal" name="ernaehrungsform" value="">
+                <fast-radio-group orientation="horizontal" name="ernaehrungsform" value="">
                     <label slot="label">Ernährungsform</label>
-                    <fluent-radio value="vegetarisch">Vegetarisch</fluent-radio>
-                    <fluent-radio value="nicht vegetarisch">Nicht vegetarisch</fluent-radio>
-                </fluent-radio-group>
+                    <fast-radio value="vegetarisch">Vegetarisch</fast-radio>
+                    <fast-radio value="nicht vegetarisch">Nicht vegetarisch</fast-radio>
+                </fast-radio-group>
             </div>
 
             <div class="kategorie">
-                <label >Kategorie</label>
-                <br>
-                <fluent-checkbox-group name="kategorie">
-                    <fluent-checkbox value="Frühstück" name="kategorie">Frühstück</fluent-checkbox>
-                    <fluent-checkbox value="Mittagessen" name="kategorie">Mittagessen</fluent-checkbox>
-                    <fluent-checkbox value="Abendessen" name="kategorie">Abendessen</fluent-checkbox>
-                </fluent-checkbox-group>
+                <label >Kategorie</label><br>
+                <fast-checkbox value="Frühstück" name="kategorie">Frühstück</fast-checkbox>
+                <fast-checkbox value="Mittagessen" name="kategorie">Mittagessen</fast-checkbox>
+                <fast-checkbox value="Abendessen" name="kategorie">Abendessen</fast-checkbox>
             </div>
 
             <div class="zutaten">
                 <label>Zutaten</label><br>
 
-                <fluent-number-field placeholder="Menge" min="0.1" step="0.1" size="6" id="menge"></fluent-number-field>
+                <fast-number-field placeholder="Menge" min="0.1" step="0.1" size="6" id="menge"></fast-number-field>
 
-                <fluent-select placeholder="Einheit" position="below" autocomplete="both" style="min-width: 50px;" id="einheit">
-                    <fluent-option value="Stück">Stück</fluent-option>
-                    <fluent-option value="mg">mg</fluent-option>
-                    <fluent-option value="g">g</fluent-option>
-                    <fluent-option value="kg">kg</fluent-option>
-                    <fluent-option value="ml">ml</fluent-option>
-                    <fluent-option value="l">l</fluent-option>
-                    <fluent-option value="Prise">Prise</fluent-option>
-                    <fluent-option value="Pck.">Pck.</fluent-option>
-                    <fluent-option value="EL">EL</fluent-option>
-                    <fluent-option value="TL">TL</fluent-option>
-                    <fluent-option value="Dose(n)">Dose(n)</fluent-option>
-                    <fluent-option value="Scheibe(n)">Scheibe(n)</fluent-option>
-                    <fluent-option value="Flasche(n)">Flasche(n)</fluent-option>
-                </fluent-select>
+                <fast-select placeholder="Einheit" position="below" autocomplete="both" style="min-width: 50px; margin-top: 15px" id="einheit">
+                    <fast-option value="Stück">Stück</fast-option>
+                    <fast-option value="mg">mg</fast-option>
+                    <fast-option value="g">g</fast-option>
+                    <fast-option value="kg">kg</fast-option>
+                    <fast-option value="ml">ml</fast-option>
+                    <fast-option value="l">l</fast-option>
+                    <fast-option value="Prise">Prise</fast-option>
+                    <fast-option value="Pck.">Pck.</fast-option>
+                    <fast-option value="EL">EL</fast-option>
+                    <fast-option value="TL">TL</fast-option>
+                    <fast-option value="Dose(n)">Dose(n)</fast-option>
+                    <fast-option value="Scheibe(n)">Scheibe(n)</fast-option>
+                    <fast-option value="Flasche(n)">Flasche(n)</fast-option>
+                </fast-select>
 
-                <fluent-text-field appearance="filled" placeholder="Zutat" id="zutat"></fluent-text-field>
+                <fast-text-field appearance="filled" placeholder="Zutat" id="zutat"></fast-text-field>
 
-                <fluent-button appearance="accent" style="border-radius: 37px;" id="hinzufuegen">+</fluent-button>
+                <fast-button appearance="accent" style="border-radius: 37px;" id="hinzufuegen">+</fast-button>
 
                 <div id="zutatenListe"></div>
             </div>
 
             <div class="zubereitung">
-                <fluent-text-area appearance="filled" resize="both" cols="30" name="zubereitung">
+                <fast-text-area appearance="filled" resize="both" cols="30" name="zubereitung">
                     <label>Zubereitung</label>
-                </fluent-text-area>
+                </fast-text-area>
             </div>
 
             <div class="zubereitungszeit">
-                <fluent-number-field appearance="filled" value="1" min="0.1" step="0.1" name="zeit">
+                <fast-number-field appearance="filled" value="1" min="0.1" step="0.1" name="zeit">
                     <label>Zubereitungszeit (min)</label>
-                </fluent-number-field>
+                </fast-number-field>
             </div>
 
             <div class="speichern">
-                <fluent-button appearance="accent" type="submit">Speichern</fluent-button>
+                <fast-button appearance="accent" type="submit">Speichern</fast-button>
             </div>
 
         </div>
     </form>
-</fluent-design-system-provider>
+</fast-design-system-provider>
 
 <script src="../src/zutatHinzufuegen.js"></script>
 <script src="../dist/bundle.js"></script>

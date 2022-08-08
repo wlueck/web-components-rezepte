@@ -4,8 +4,7 @@
 
 import {
     allComponents,
-    provideFluentDesignSystem
-} from "@fluentui/web-components";
+    provideFASTDesignSystem
+} from "@microsoft/fast-components";
 
-provideFluentDesignSystem()
-    .register(allComponents);
+provideFASTDesignSystem().register(allComponents);

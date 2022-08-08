@@ -30,7 +30,7 @@ function addZutat() {
     newZutat.list.setAttribute("name", "zutaten");
     newZutat.list.setAttribute("value", newZutat.zutat.data);
     newZutat.list.setAttribute("readonly", "true");
-    newZutat.list.setAttribute("style", "border: none; font-size: 18px;");
+    newZutat.list.setAttribute("style", "border: none; font-size: 18px; margin-top:20px;");
 
     newZutat.button.innerText = "-";
 
@@ -44,6 +44,6 @@ class Zutat {
         this.listElement = document.createElement("div");
         this.list = document.createElement("input");
         this.zutat = document.createTextNode(menge + " " + einheit + " " + zutat);
-        this.button = document.createElement("fluent-button");
+        this.button = document.createElement("fast-button");
     }
 }
