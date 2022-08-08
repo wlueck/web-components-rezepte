@@ -5,49 +5,14 @@
     font-family: 'Montserrat', serif;
     --body-font: 'Montserrat', serif;
 
-    --neutral-fill-rest: #ededed;
-    --neutral-fill-hover: #e5e5e5;
-    --neutral-fill-active: #f2f2f2;
-    --neutral-fill-focus: #ffffff;
-    --neutral-fill-input-rest: #ffffff;
-    --neutral-fill-input-hover: #ffffff;
-    --neutral-fill-input-active: #ffffff;
-    --neutral-fill-input-focus: #ffffff;
-    --neutral-fill-stealth-rest: #ffffff;
-    --neutral-fill-stealth-hover: #f2f2f2;
-    --neutral-fill-stealth-active: #f7f7f7;
-    --neutral-fill-stealth-focus: #ffffff;
-    --neutral-fill-strong-rest: #757575;
-    --neutral-fill-strong-hover: #616161;
-    --neutral-fill-strong-active: #828282;
-    --neutral-fill-strong-focus: #757575;
-    --neutral-fill-layer-rest: #f7f7f7;
-    --focus-stroke-inner: #fbfcff;
-    --focus-stroke-outer: #878787;
-    --neutral-foreground-hint: #757575;
-    --neutral-foreground-rest: #2b2b2b;
-    --neutral-stroke-rest: #bebebe;
-    --neutral-stroke-hover: #979797;
-    --neutral-stroke-active: #d5d5d5;
-    --neutral-stroke-focus: #bebebe;
-    --neutral-stroke-divider-rest: #eaeaea;
-    --tree-item-expand-collapse-hover: #e5e5e5;
-    --tree-item-expand-collapse-selected-hover: #e0e0e0;
-    --fill-color: #ffffff;
-    --neutral-layer-card-container: #f7f7f7;
-    --neutral-layer-floating: #ffffff;
-    --neutral-layer-1: #ffffff;
-    --neutral-layer-2: #e5e5e5;
-    --neutral-layer-3: #dddddd;
-    --neutral-layer-4: #d5d5d5;
-    --base-layer-luminance: 1;
-    --accent-fill-rest: #ffac20;
-    --accent-fill-hover: #ffac20;
-    --accent-fill-active: #ffac20;
-    --accent-fill-focus: #ffac20;
-    --foreground-on-accent-active-large: #ffffff;
-    --foreground-on-accent-active: #ffffff;
+    --accent-foreground-rest: #ffac20;
+    --accent-foreground-hover: #ffac20;
+    --accent-foreground-active: #ffac20;
+    --accent-foreground-focus: #ffac20;
+
     --foreground-on-accent-rest: #ffffff;
+    --foreground-on-accent-hover: #ffffff;
+    --foreground-on-accent-active: #ffffff;
     --foreground-on-accent-focus: #ffffff;
 }
 

@@ -10,7 +10,7 @@
 </head>
 <body>
 
-<fast-design-system-provider accent-color="#FFAC20" id="app">
+<fast-design-system-provider accent-color="#FFAC20" base-layer-luminance="1" id="app">
     <div class="grid-container-navbar">
         <div class="brandName">
             <fast-anchor href="/" appearance="lightweight">HOME</fast-anchor>
@@ -28,7 +28,7 @@
         <div class="grid-container-main">
 
             <div class="titel">
-                <fast-text-field placeholder="Titel" appearance="filled" type="text" name="titel" required>
+                <fast-text-field placeholder="Titel" appearance="filled" type="text" name="titel" style="width: 420px" required>
                     <label>Rezepttitel</label>
                 </fast-text-field>
             </div>
@@ -83,7 +83,7 @@
             </div>
 
             <div class="zubereitung">
-                <fast-text-area appearance="filled" resize="both" cols="30" name="zubereitung">
+                <fast-text-area appearance="filled" resize="both" cols="50" rows="7" name="zubereitung">
                     <label>Zubereitung</label>
                 </fast-text-area>
             </div>
