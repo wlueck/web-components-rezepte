@@ -9,7 +9,10 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
 
     <style>
-        .accordion {
+        /*
+         *   Style fuer das Akkordeon
+         */
+        .akkordeon {
             padding: 18px;
             width: 100%;
             text-align: left;
@@ -24,12 +27,16 @@
             display: none;
         }
 
-        .accordion_hover:hover {
-            border-left: 4px solid #FFB338;
+        .akkordeon_hover:hover {
+            border-left: 4px solid #FFAC20FF;
         }
 
         #rezeptListe {
             margin: 0 116px 20px 116px;
+        }
+
+        #rezeptListe * {
+            font-family: 'Montserrat', serif;
         }
 
         #zubereitung {
@@ -59,8 +66,8 @@
 
 <div id="rezeptListe">
     <% for(var i = 0; i < rezepte.length; i++) { %>
-        <div class="accordion_hover">
-            <button class="accordion">
+        <div class="akkordeon_hover">
+            <button class="akkordeon">
                 <h3>
                     <%= rezepte[i].titel %>
                     <mwc-button raised="" id="zeit" style="float: right"><%= rezepte[i].zeit %> min</mwc-button>
@@ -104,19 +111,19 @@
 </div>
 
 <script>
-    let accordion = document.getElementsByClassName("accordion");
+    let akkordeon = document.getElementsByClassName("akkordeon");
 
-    for (let i = 0; i < accordion.length; i++) {
-        accordion[i].addEventListener("click", function () {
+    for (let i = 0; i < akkordeon.length; i++) {
+        akkordeon[i].addEventListener("click", function () {
             this.classList.toggle("active");
             let panel = this.nextElementSibling;
             if (panel.style.display === "block") {
                 panel.style.display = "none";
-                accordion[i].style.borderBottom = "2px solid #EDEDED";
+                akkordeon[i].style.borderBottom = "2px solid #EDEDED";
             } else {
                 panel.style.display = "block";
                 panel.style.borderTop = "none";
-                accordion[i].style.borderBottom = "none";
+                akkordeon[i].style.borderBottom = "none";
             }
         });
     }
