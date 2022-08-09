@@ -7,5 +7,4 @@ import {
     provideFASTDesignSystem
 } from "@microsoft/fast-components";
 
-provideFASTDesignSystem()
-    .register(allComponents);
+provideFASTDesignSystem().register(allComponents);
