@@ -14,6 +14,11 @@
     --foreground-on-accent-hover: #ffffff;
     --foreground-on-accent-active: #ffffff;
     --foreground-on-accent-focus: #ffffff;
+
+    --neutral-fill-input-rest: #edededff;
+    --neutral-fill-input-hover: #edededff;
+    --neutral-fill-input-active: #edededff;
+    --neutral-fill-input-focus: #edededff;
 }
 
 /**

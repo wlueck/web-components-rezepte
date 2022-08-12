@@ -23,7 +23,7 @@ hinzufuegenButton.addEventListener("click", function () {
 function addZutat() {
     let newZutat = new Zutat(zutat.value, menge.value, einheit.value);
 
-    newZutat.button.addEventListener("click", function () {
+    newZutat.loeschenButton.addEventListener("click", function () {
         output.removeChild(newZutat.listElement);
     });
     newZutat.list.setAttribute("type", "text");
@@ -32,12 +32,12 @@ function addZutat() {
     newZutat.list.setAttribute("readonly", "true");
     newZutat.list.setAttribute("style", "border: none; font-size: 18px;");
 
-    newZutat.button.setAttribute("theme", "icon primary small");
-    newZutat.button.setAttribute("style", "border-radius: 50px;");
-    newZutat.button.innerText = "-";
+    newZutat.loeschenButton.setAttribute("theme", "icon primary small");
+    newZutat.loeschenButton.setAttribute("style", "border-radius: 50px;");
+    newZutat.loeschenButton.innerText = "-";
 
     newZutat.listElement.appendChild(newZutat.list);
-    newZutat.listElement.appendChild(newZutat.button);
+    newZutat.listElement.appendChild(newZutat.loeschenButton);
     output.appendChild(newZutat.listElement);
 }
 
@@ -46,6 +46,6 @@ class Zutat {
         this.listElement = document.createElement("div");
         this.list = document.createElement("input");
         this.zutat = document.createTextNode(menge + " " + einheit + " " + zutat);
-        this.button = document.createElement("vaadin-button");
+        this.loeschenButton = document.createElement("vaadin-button");
     }
 }

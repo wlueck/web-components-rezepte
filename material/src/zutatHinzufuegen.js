@@ -26,13 +26,13 @@ function addZutat() {
     newZutat.loeschenButton.addEventListener("click", function () {
         output.removeChild(newZutat.listElement);
     });
-    newZutat.loeschenButton.setAttribute("icon", "remove");
-
     newZutat.list.setAttribute("type", "text");
     newZutat.list.setAttribute("name", "zutaten");
     newZutat.list.setAttribute("value", newZutat.zutat.data);
     newZutat.list.setAttribute("readonly", "true");
     newZutat.list.setAttribute("style", "border: none; font-size: 18px;");
+
+    newZutat.loeschenButton.setAttribute("icon", "remove")
 
     newZutat.listElement.appendChild(newZutat.list);
     newZutat.listElement.appendChild(newZutat.loeschenButton);
