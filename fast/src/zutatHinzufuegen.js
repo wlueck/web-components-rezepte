@@ -30,10 +30,10 @@ function addZutat() {
     newZutat.list.setAttribute("name", "zutaten");
     newZutat.list.setAttribute("value", newZutat.zutat.data);
     newZutat.list.setAttribute("readonly", "true");
-    newZutat.list.setAttribute("style", "border: none; font-size: 18px; margin-top:20px;");
+    newZutat.list.setAttribute("style", "border: none; font-size: 18px; margin-top:30px;");
 
     newZutat.loeschenButton.setAttribute("theme", "icon primary");
-    newZutat.loeschenButton.setAttribute("style", "border-radius: 50px;");
+    newZutat.loeschenButton.setAttribute("style", "border-radius: 50px; position: absolute; margin-top:20px;");
     newZutat.loeschenButton.innerText = "-";
 
     newZutat.listElement.appendChild(newZutat.list);

@@ -30,8 +30,9 @@ function addZutat() {
     newZutat.list.setAttribute("name", "zutaten");
     newZutat.list.setAttribute("value", newZutat.zutat.data);
     newZutat.list.setAttribute("readonly", "true");
-    newZutat.list.setAttribute("style", "border: none; font-size: 18px;");
+    newZutat.list.setAttribute("style", "border: none; font-size: 18px; margin-top:10px;");
 
+    newZutat.loeschenButton.setAttribute("style", "position: absolute;");
     newZutat.loeschenButton.setAttribute("icon", "remove")
 
     newZutat.listElement.appendChild(newZutat.list);
